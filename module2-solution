@@ -1,0 +1,118 @@
+module2-solution/html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Responsive Layout Example</h1>
+        </header>
+        <section class="section" id="section1">
+            <div class="section-title">Chicken</div>
+            <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </section>
+        <section class="section" id="section2">
+            <div class="section-title">Beef</div>
+            <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </section>
+        <section class="section" id="section3">
+            <div class="section-title">Sushi</div>
+            <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </section>
+    </div>
+
+</body>
+</html>
+
+module-2solution css
+/* Apply box-sizing border-box to all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container setup */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100%;
+}
+
+/* Header style */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* General section styling */
+.section {
+    background-color: #cce7ff; /* Light blue background */
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+}
+
+/* Section title position (top-right corner) */
+.section-title {
+    background-color: #ff6666; /* Red background */
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+/* Content styling for the sections */
+.content {
+    margin-top: 40px; /* Push down text so it doesn't overlap title */
+    padding: 10px;
+    text-align: justify;
+}
+
+/* Layout for desktop: 992px and above */
+@media screen and (min-width: 992px) {
+    .section {
+        width: 32%; /* Each section takes up 1/3 of the width */
+        float: left;
+        margin-right: 2%; /* Space between sections */
+    }
+
+    .section:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Layout for tablet: Between 768px and 991px */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .section {
+        width: 48%; /* First two sections take up half the width */
+        margin-right: 2%;
+    }
+
+    .section:last-child {
+        width: 100%; /* The last section takes up the whole row */
+        margin-right: 0;
+    }
+}
+
+/* Layout for mobile: 767px and below */
+@media screen and (max-width: 767px) {
+    .section {
+        width: 100%; /* Each section takes up the full width */
+        margin-right: 0;
+    }
+}
